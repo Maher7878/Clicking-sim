@@ -1,0 +1,44 @@
+import time
+
+class Clicker:
+    def __init__(self):
+        self.energy = 0
+        self.click_multiplier = 1
+
+    def click(self):
+        self.energy += self.click_multiplier
+
+    def upgrade_click_multiplier(self):
+        self.click_multiplier *= 2
+
+def main():
+    clicker = Clicker()
+
+    print("Welcome to Quantum Clicker: The Multiverse Unleashed!")
+    print("Click to generate quantum energy and traverse the multiverse.")
+
+    while True:
+        print("\n[Energy: {}]".format(clicker.energy))
+        print("1. Click")
+        print("2. Upgrade Click Multiplier")
+        print("3. Quit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            clicker.click()
+            print("Clicked! Energy increased by {}".format(clicker.click_multiplier))
+        elif choice == '2':
+            clicker.upgrade_click_multiplier()
+            print("Click multiplier upgraded! Energy generation boosted.")
+        elif choice == '3':
+            print("Thank you for playing Quantum Clicker: The Multiverse Unleashed!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+        # Add a delay for dramatic effect
+        time.sleep(0.5)
+
+if __name__ == "__main__":
+    main()
